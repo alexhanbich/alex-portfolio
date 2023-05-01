@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shape:nth-of-type(1) {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #627376, #eae6df);
+  opacity: 0.4;
+  top: -50px;
+  left: -50px;
+  animation: wave 10s ease-in-out infinite;
+}
+.shape:nth-of-type(2) {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(30deg, #b0b0b0, #e4d5c8);
+  top: 50px;
+  left: 150px;
+  opacity: 0.4;
+  z-index: -1;
+  animation: wave 12s ease-in-out infinite;
+  animation-delay: -2s;
+}
+.shape:nth-of-type(3) {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(73deg, #dbc4c1, #b0b0b0);
+  top: -50px;
+  right: -50px;
+  opacity: 0.3;
+  z-index: -1;
+  animation: wave 14s ease-in-out infinite;
+  animation-delay: -4s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes wave {
+  0%,
+  100% {
+    border-radius: 66% 34% 37% 63% / 57% 31% 69% 43%;
+  }
+  50% {
+    border-radius: 26% 74% 51% 49% / 22% 53% 47% 78%;
+  }
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+hr {
+  border-top: 1px solid black;
 }
